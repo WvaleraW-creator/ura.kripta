@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Расчет Бобла</title>
+</head>
+<body>
+<script>
+    function zero() {
+        var kriptA = document.getElementById("kripta");
+        var procenT = document.getElementById("procent");
+        var dneY = document.getElementById("dney");
+       debugger;
+        if (kriptA.value == '') {
+            kriptA.focus()
+        } else if (procenT.value == '') {
+            procenT.focus()
+        } else if (dneY.value == '') {
+            dneY.focus()
+        } else r123();
+    }
+    function r123() {
+        var kriptA = document.getElementById("kripta");
+        var procenT = document.getElementById("procent");
+        var dneY = document.getElementById("dney");
+        var summa = 0;
+        kriptA = kriptA.value;
+        procenT = procenT.value;
+        dneY = dneY.value;
+        summa =1+procenT/100;
+        summa=summa**dneY;
+        summa=summa*kriptA;
+        summa=summa.toFixed(9);
+        let vsego1= document.getElementById("vsego");
+        vsego1.value=summa;
+    }
+</script>
+<table border="0" >
+    <tr>
+        <td><b>Всего крипты -</td>
+        <td><input  autofocus type="number"  id="kripta"></td>
+    </tr>
+    <tr>
+        <td><b>Процент в день-</td>
+        <td><input  type="number"  id="procent"></td>
+    </tr>
+    <tr>
+        <td><b>Дней инвеста -</td>
+        <td><input   type="number" id="dney"></td>
+    </tr>
+
+    <tr>
+        <td>Всего-</td>
+        <td  ><input type="number" value="0" id="vsego"></td>
+    </tr>
+</table>
+<input type="button" onclick="zero()" value="Расчет">
+</body>
+</html>
